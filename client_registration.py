@@ -4,7 +4,7 @@ import mysql.connector
 mydb = mysql.connector.Connect(
     host='localhost',
     user='root',
-    password='ashishlal',
+    password='MySQL@2412',
     database='home_rental'
 )
 
@@ -14,6 +14,10 @@ root = Tk()
 root.title("Client Registration")
 root.geometry('635x570')
 
+def back():
+    root.destroy()
+    os.system("python main.py")
+    
 def func_root():
     client_number = client_number_entry.get()
     full_name = full_name_entry.get()
@@ -60,5 +64,7 @@ date_registered_entry.place(x=200, y=402)
 
 
 submit_but=Button(root, text="Submit", width=10, bg="purple", fg="white", command=func_root).place(x=50, y=455)
+
+back_but=Button(root, text="Back", width=10, bg="grey", fg="white", command=back).place(x=485, y=455)
 
 root.mainloop()
